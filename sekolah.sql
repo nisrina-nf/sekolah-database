@@ -7,7 +7,7 @@ create table siswa (
 
 create table nilai (
 	id SERIAL primary key,
-	siswa_id INT,
+	siswa_id serial4 not null,
 	foreign key (siswa_id) references siswa(id),
 	mata_pelajaran VARCHAR(100),
 	nilai INT
