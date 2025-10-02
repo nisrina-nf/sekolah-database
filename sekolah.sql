@@ -1,17 +1,8 @@
-insert into siswa (nama, umur, jurusan)
-values 
-	('Andi', 16, 'IPA'), 
-	('Budi', 17, 'IPS'), 
-	('Pratama', 17, 'IPA'), 
-	('Lestari', 17, 'IPS'), 
-	('Citra', 17, 'IPA'), 
-	('Dewi', 17, 'IPS');
+select * from siswa;
 
-insert into nilai (siswa_id, mata_pelajaran, nilai)
-values
-	(1, 'Matematika', 85),
-	(2, 'Bahasa Inggris', 90),
-	(3, 'Bahasa Indonesia', 90),
-	(4, 'IPS', 90),
-	(5, 'Seni Budaya', 86),
-	(6, 'PJOK', 90);
+select nama, jurusan from siswa where jurusan = 'IPA';
+
+select siswa.nama, AVG(nilai.nilai) as rata_nilai
+from siswa
+join nilai on siswa.id = nilai .siswa_id
+group by siswa.nama;
